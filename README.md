@@ -177,7 +177,7 @@ python encrypid_ui.py
 
 #### 📸 Tela Inicial da GUI
 
-![EncrypId GUI](https://your-image-link.com/gui_screenshot.png)
+![EncrypId GUI](screenshot.png)
 
 ---
 
