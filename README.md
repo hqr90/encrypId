@@ -14,6 +14,7 @@
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Instalação](#instalação)
 - [Como Usar](#como-usar)
+  - [Instalação via `pip`](#instalação-via-pip)
   - [Interface de Linha de Comando (CLI)](#interface-de-linha-de-comando-cli)
   - [Interface Gráfica (GUI)](#interface-gráfica-gui)
 - [Exemplos de Uso](#exemplos-de-uso)
@@ -54,16 +55,19 @@ Em um mundo cada vez mais digital, proteger informações sensíveis é essencia
 
 ```
 encrypid/
-├── encrypid.py                # Classe principal para encriptação e decriptação
-├── encrypid_cli.py            # Interface de linha de comando
-├── encrypid_ui.py             # Interface gráfica com PyQt5
-├── credentials.yaml           # Arquivo de credenciais de exemplo
-├── credentials_encrypted.bin  # Arquivo encriptado das credenciais
-├── .env                       # Arquivo de variáveis de ambiente
-├── encrypt_credentials.py     # Script para encriptar credenciais via código
-├── decrypt_credentials.py     # Script para decriptar credenciais via código
-├── main.py                    # Script principal de exemplo
-└── requirements.txt           # Dependências do projeto
+├── encrypid/
+│   ├── __init__.py            # Inicializa o pacote EncrypId
+│   ├── encrypid.py            # Classe principal para encriptação e decriptação
+│   └── encrypid_ui.py         # Interface gráfica com PyQt5
+├── tests/
+│   ├── __init__.py
+│   └── test_encrypid.py
+├── LICENSE
+├── README.md
+├── setup.py
+├── pyproject.toml
+├── requirements.txt
+└── MANIFEST.in
 ```
 
 ---
@@ -73,7 +77,7 @@ encrypid/
 ### 1. Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/encrypid.git
+git clone https://github.com/hqr90/encrypid.git
 cd encrypid
 ```
 
@@ -90,11 +94,23 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### 4. Publicar no PyPI (Opcional)
+
+Para tornar o EncrypId instalável via `pip`, você pode publicar o pacote no [PyPI](https://pypi.org/). Siga os passos descritos na seção [Tornar o EncrypId Instalável via `pip`](#como-usar).
+
 ---
 
 ## Como Usar
 
-EncrypId oferece duas formas principais de utilização: via **CLI** e via **GUI**.
+EncrypId está disponível tanto via **CLI** quanto via **GUI**. Além disso, você pode instalar o EncrypId diretamente via `pip` para facilitar o uso.
+
+### Instalação via `pip`
+
+Após publicar no PyPI, instale o EncrypId usando:
+
+```bash
+pip install encrypid
+```
 
 ### Interface de Linha de Comando (CLI)
 
@@ -103,7 +119,7 @@ A CLI permite que você encripte e decripte suas credenciais diretamente pelo te
 #### 🔒 Encriptar Credenciais
 
 ```bash
-python encrypid_cli.py encrypt -i credentials.yaml -o credentials_encrypted.bin
+encrypid encrypt -i caminho/para/credentials.yaml -o caminho/para/credentials_encrypted.bin
 ```
 
 **Parâmetros:**
@@ -113,7 +129,7 @@ python encrypid_cli.py encrypt -i credentials.yaml -o credentials_encrypted.bin
 **Exemplo:**
 
 ```bash
-python encrypid_cli.py encrypt -i credentials.yaml -o credentials_encrypted.bin
+encrypid encrypt -i credentials.yaml -o credentials_encrypted.bin
 ```
 
 Será solicitado que você insira uma senha segura para encriptar as credenciais.
@@ -121,7 +137,7 @@ Será solicitado que você insira uma senha segura para encriptar as credenciais
 #### 🔓 Decriptar Credenciais
 
 ```bash
-python encrypid_cli.py decrypt -i credentials_encrypted.bin -o decrypted_credentials.yaml
+encrypid decrypt -i caminho/para/credentials_encrypted.bin -o caminho/para/decrypted_credentials.yaml
 ```
 
 **Parâmetros:**
@@ -131,19 +147,19 @@ python encrypid_cli.py decrypt -i credentials_encrypted.bin -o decrypted_credent
 **Exemplo:**
 
 ```bash
-python encrypid_cli.py decrypt -i credentials_encrypted.bin -o decrypted_credentials.yaml
+encrypid decrypt -i credentials_encrypted.bin -o decrypted_credentials.yaml
 ```
 
 Ou para exibir no terminal:
 
 ```bash
-python encrypid_cli.py decrypt -i credentials_encrypted.bin
+encrypid decrypt -i credentials_encrypted.bin
 ```
 
 #### 🔑 Gerar Chave (Opcional)
 
 ```bash
-python encrypid_cli.py generate_key
+encrypid generate_key
 ```
 
 Este comando serve para verificar se a senha está funcionando corretamente, embora a geração de chave seja gerenciada internamente.
@@ -154,8 +170,10 @@ A GUI proporciona uma experiência visual para gerenciar suas credenciais sem a 
 
 #### 🔧 Executar a GUI
 
+Após a instalação via `pip`, inicie a GUI usando:
+
 ```bash
-python encrypid_ui.py
+encrypid-gui
 ```
 
 **Funcionalidades Disponíveis:**
@@ -186,7 +204,7 @@ python encrypid_ui.py
 ### 1. Encriptando Credenciais via CLI
 
 ```bash
-python encrypid_cli.py encrypt -i credentials.yaml -o credentials_encrypted.bin
+encrypid encrypt -i credentials.yaml -o credentials_encrypted.bin
 ```
 
 **Passo a Passo:**
@@ -198,7 +216,7 @@ python encrypid_cli.py encrypt -i credentials.yaml -o credentials_encrypted.bin
 ### 2. Decriptando Credenciais via CLI
 
 ```bash
-python encrypid_cli.py decrypt -i credentials_encrypted.bin -o decrypted_credentials.yaml
+encrypid decrypt -i credentials_encrypted.bin -o decrypted_credentials.yaml
 ```
 
 **Passo a Passo:**
@@ -209,10 +227,10 @@ python encrypid_cli.py decrypt -i credentials_encrypted.bin -o decrypted_credent
 
 ### 3. Utilizando a GUI
 
-1. Execute o script da GUI:
+1. Execute o comando da GUI:
 
    ```bash
-   python encrypid_ui.py
+   encrypid-gui
    ```
 
 2. Na seção de encriptação:
@@ -304,5 +322,9 @@ Para dúvidas, sugestões ou contribuições, entre em contato:
 - **GitHub:** [hqr90](https://github.com/hqr90)
 
 ---
+
 ✨ **Proteja suas credenciais com EncrypId e garanta a segurança dos seus dados!** ✨
----#   e n c r y p I d 
+```
+
+✨ **Parabéns! Agora o EncrypId está disponível para instalação via `pip` e pode ser utilizado de forma fácil e segura para gerenciar suas credenciais sensíveis.** ✨
+```

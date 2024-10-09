@@ -3,6 +3,9 @@
 import click
 from getpass import getpass
 import os
+
+import yaml
+
 from encrypid import EncrypId
 from dotenv import load_dotenv
 
