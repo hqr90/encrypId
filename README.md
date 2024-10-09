@@ -305,6 +305,4 @@ Para dúvidas, sugestões ou contribuições, entre em contato:
 
 ---
 ✨ **Proteja suas credenciais com EncrypId e garanta a segurança dos seus dados!** ✨
----#   e n c r y p I d 
- 
- 
+---#   e n c r y p I d 
