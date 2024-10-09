@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="encrypid",  # Nome do pacote no PyPI
-    version="0.1.0",  # Versão inicial
+    version="0.1.2",  # Versão inicial
     author="Hilton Queiroz Rebello",
     author_email="rebello.hiltonqueiroz@gmail.com",
     description="Uma ferramenta para encriptar e decriptar credenciais de forma segura.",
@@ -26,6 +26,12 @@ setup(
         "click",
         "pyyaml",
         "python-dotenv",
+        "colorama",
+        "pycparser",
+        "PyQt5-Qt5",
+        "PyQt5_sip",
+        "python-dotenv",
+        "PyYAML"
     ],
     entry_points={
         'console_scripts': [

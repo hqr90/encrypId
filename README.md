@@ -309,7 +309,7 @@ Contribuições são bem-vindas! Se você deseja melhorar o EncrypId, siga os pa
 
 ## Licença
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este projeto está licenciado sob a [MIT License](LICENCE).
 
 ---
 
