@@ -324,7 +324,3 @@ Para dúvidas, sugestões ou contribuições, entre em contato:
 ---
 
 ✨ **Proteja suas credenciais com EncrypId e garanta a segurança dos seus dados!** ✨
-```
-
-✨ **Parabéns! Agora o EncrypId está disponível para instalação via `pip` e pode ser utilizado de forma fácil e segura para gerenciar suas credenciais sensíveis.** ✨
-```

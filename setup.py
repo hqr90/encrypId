@@ -1,4 +1,3 @@
-# setup.py
 from setuptools import setup, find_packages
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -13,12 +12,13 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/hqr90/encrypid",  # URL do repositório
-    packages=find_packages(),
+    packages=find_packages(include=["encrypid", "encrypid.*", "tests", "tests.*"]),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    include_package_data=True,  # Inclui arquivos especificados no MANIFEST.in
     python_requires='>=3.8',
     install_requires=[
         "cryptography",

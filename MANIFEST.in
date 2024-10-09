@@ -1,6 +1,4 @@
-# MANIFEST.in
-
 include README.md
 include LICENSE
 recursive-include encrypid *.py
-recursive-include encrypid_ui *.py
+recursive-include tests *.py
